@@ -1,0 +1,34 @@
+<div class="breadcrumbs-wrapper" data-pjax-fragment="Breadcrumbs">
+
+    <h2 id="page-title-heading">
+        <% if $ToplevelController %>
+        <span class="section-icon icon icon-16 icon-{$ToplevelController.MenuCurrentItem.Code.LowerCase}"></span>
+        <% else_if $Controller %>
+        <span class="section-icon icon icon-16 icon-{$Controller.MenuCurrentItem.Code.LowerCase}"></span>
+        <% else %>
+        <span class="section-icon icon icon-16 icon-{$MenuCurrentItem.Code.LowerCase}"></span>
+        <% end_if %>
+
+        <% loop $Breadcrumbs %>
+        <% if $Last %>
+        <span class="cms-panel-link crumb last">
+            <% if $Title %>
+            $Title.XML
+            <% else %>
+            _$ID_
+            <% end_if %>
+        </span>
+        <% else %>
+        <a class="cms-panel-link crumb" href="$Link">
+            <% if $Title %>
+            $Title.XML
+            <% else %>
+            _No_Title_
+            <% end_if %>
+        </a>
+        <span class="sep">/</span>
+        <% end_if %>
+        <% end_loop %>
+    </h2>
+</div>
+
