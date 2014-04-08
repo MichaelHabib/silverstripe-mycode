@@ -1,3 +1,3 @@
 <?php
 //Set the admin email address & pass
-Security::setDefaultAdmin('test_admin@designerx.com.au', 'abc123');
+Security::setDefaultAdmin('some-email@designerx.com.au', '1234');
